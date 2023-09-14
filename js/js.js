@@ -99,3 +99,15 @@ function Progresso() {
     }
     this.atualizarPontos(0)
 }
+
+
+function estaoSobrepostos(elementoA, elementoB){
+    const a = elementoA.getBoundingClientRect()
+    const b = elementoB.getBoundingClientRect()
+
+    const horizontal = a.left + a.width >= b.left
+        && b.left + b.width >= a.left
+    const vertical = a.top + a.height >= b.top
+        && b.top + b.height >= a.top
+        return horizontal && vertical
+}
